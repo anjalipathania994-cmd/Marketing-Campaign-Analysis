@@ -38,8 +38,16 @@ Based on the analysis, I provided data-driven recommendations to improve future 
 
 
 Python – Data cleaning and preprocessing (pandas, numpy)
+
+
 SQL (MySQL / PostgreSQL) – Business logic and analytical queries
+
+
+
 Power BI Desktop – Interactive dashboards and KPIs
+
+
+
 Excel – Initial data review and validation
 
 ## 📊 Dataset Information
@@ -48,9 +56,18 @@ Excel – Initial data review and validation
 
 The dataset I used initially contained raw, untidy data representing various marketing campaigns from 2022 to 2024.
 
+
+
+
 Total Records (Initial): 6,000 rows
 
+
+
+
 Total Records (Cleaned): 2,582 rows (after removing bad data and extreme outliers)
+
+
+
 
 Key Columns: 10 columns including campaign_id, campaign_name, channel, region, start_date, budget_usd, leads_generated, conversions, roi_percent, and status.
 
@@ -59,17 +76,33 @@ Key Columns: 10 columns including campaign_id, campaign_name, channel, region, s
 
 
 
-Real-world data is rarely clean. I used Python (Pandas) in a Jupyter Notebook to systematically clean and standardize the dataset before performing any analysis. Here is exactly what I did step-by-step:
+I used Python (Pandas) in a Jupyter Notebook to systematically clean and standardize the dataset before performing any analysis. 
 
-Standardized Column Names: I converted all column headers to lowercase and replaced spaces with underscores (e.g., Campaign Name became campaign_name) to make querying easier later.
+Here is exactly what I did step-by-step:
 
-Removed Duplicates & Spaces: I stripped extra, hidden spaces from text columns and deleted duplicate rows to ensure accurate counting.
+## Standardized Column Names:
 
-Handled Missing Values: * For text columns (like channel and region), I filled empty spaces with the "mode" (the most frequent value).
+ I converted all column headers to lowercase and replaced spaces with underscores (e.g., Campaign Name became campaign_name) to make querying easier later.
 
-For number columns (like leads_generated and conversions), I filled empty spaces with the "median" to avoid skewing the averages.
+## Removed Duplicates & Spaces:
 
-Fixed Data Formats: * I cleaned the budget_usd column by removing string characters like $, USD, and commas, then converted it into proper numbers.
+ I stripped extra, hidden spaces from text columns and deleted duplicate rows to ensure accurate counting.
+
+## Handled Missing Values:
+
+
+
+ * For text columns (like channel and region), 
+
+I filled empty spaces with the "mode" (the most frequent value).
+
+For number columns (like leads_generated and conversions), 
+
+I filled empty spaces with the "median" to avoid skewing the averages.
+
+## Fixed Data Formats: 
+
+* I cleaned the budget_usd column by removing string characters like $, USD, and commas, then converted it into proper numbers.
 
 I cleaned the roi_percent column by removing the % symbol so I could perform math on it.
 
@@ -77,11 +110,16 @@ I converted the start_date column into a proper, standardized Date format.
 
 I fixed text formatting so that words were uniformly capitalized (e.g., converting "social media" to "Social Media").
 
-Generated Missing IDs: I found rows missing a campaign_id and wrote a script to automatically generate new, unique IDs (like 'CMP-10001') to maintain a perfect primary key.
+## Generated Missing IDs:
+ I found rows missing a campaign_id and wrote a script to automatically generate new, unique IDs (like 'CMP-10001') to maintain a perfect primary key.
 
-Removed Extreme Outliers: I used the Interquartile Range (IQR) statistical method to remove crazy, unrealistic outliers in budgets and leads that would have distorted my final dashboard.
+## Removed Extreme Outliers:
 
-Database Export: Finally, I used SQLAlchemy to automatically push my beautifully cleaned dataset directly into a PostgreSQL database for analysis.
+ I used the Interquartile Range (IQR) statistical method to remove crazy, unrealistic outliers in budgets and leads that would have distorted my final dashboard.
+
+## Database Export: 
+
+Finally, I used SQLAlchemy to automatically push my beautifully cleaned dataset directly into a PostgreSQL database for analysis.
 
 ## 📈 Exploratory Data Analysis (EDA)
 
@@ -99,15 +137,23 @@ I reviewed the date ranges to confirm we had a solid multi-year dataset (2022–
 
 
 
-Once the clean data was in my PostgreSQL database, I wrote 12 targeted SQL queries to extract meaningful business metrics. Here is what I performed:
+Once the clean data was in my PostgreSQL database, 
+I wrote 12 targeted SQL queries to extract meaningful business metrics.
 
-Aggregations for Performance: I used GROUP BY, SUM, and AVG to find out which marketing channels yield the highest average ROI and the most leads.
+## Aggregations for Performance:
 
-Created Custom Business Metrics: I wrote formulas directly in SQL to calculate the conversion_rate_pct (conversions divided by leads) and roi_per_dollar to see where our money works hardest.
+ I used GROUP BY, SUM, and AVG to find out which marketing channels yield the highest average ROI and the most leads.
 
-Budget Logic: I used CASE WHEN statements to group campaigns into 'Low (<$10k)', 'Medium ($10k-$30k)', and 'High (>$30k)' budget buckets to see if spending more actually guarantees better returns.
+## Created Custom Business Metrics: 
 
-Regional Deep Dives: I wrote multi-step queries to find the absolute worst-performing region, and then drilled down to find the specific campaigns causing that failure.
+I wrote formulas directly in SQL to calculate the conversion_rate_pct (conversions divided by leads) and roi_per_dollar to see where our money works hardest.
+
+## Budget Logic:
+
+ I used CASE WHEN statements to group campaigns into 'Low (<$10k)', 'Medium ($10k-$30k)', and 'High (>$30k)' budget buckets to see if spending more actually guarantees better returns.
+
+## Regional Deep Dives:
+ I wrote multi-step queries to find the absolute worst-performing region, and then drilled down to find the specific campaigns causing that failure.
 
 Time-Series Analysis: I used date functions (TO_CHAR and EXTRACT) to group performance by Year-Month to spot historical trends and find out which specific month consistently delivers the best ROI.
 
