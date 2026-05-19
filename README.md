@@ -76,9 +76,9 @@ I used Python (Pandas) in a Jupyter Notebook to systematically clean and standar
 
 Here is exactly what I did step-by-step:
 
-**Standardized Column Names**:I converted all column headers to lowercase and replaced spaces with underscores (e.g., Campaign Name became campaign_name) to make querying easier later.
+- **Standardized Column Names**:I converted all column headers to lowercase and replaced spaces with underscores (e.g., Campaign Name became campaign_name) to make querying easier later.
 
-**Removed Duplicates & Spaces**:I stripped extra, hidden spaces from text columns and deleted duplicate rows to ensure accurate counting.
+- **Removed Duplicates & Spaces**:I stripped extra, hidden spaces from text columns and deleted duplicate rows to ensure accurate counting.
 
 ## Handled Missing Values:
 
@@ -102,11 +102,11 @@ Here is exactly what I did step-by-step:
 
 - I fixed text formatting so that words were uniformly capitalized (e.g., converting "social media" to "Social Media").
 
-**Generated Missing IDs**:I found rows missing a campaign_id and wrote a script to automatically generate new, unique IDs (like 'CMP-10001') to maintain a perfect primary key.
+- **Generated Missing IDs**:I found rows missing a campaign_id and wrote a script to automatically generate new, unique IDs (like 'CMP-10001') to maintain a perfect primary key.
 
-**Removed Extreme Outliers**:I used the Interquartile Range (IQR) statistical method to remove crazy, unrealistic outliers in budgets and leads that would have distorted my final dashboard.
+- **Removed Extreme Outliers**:I used the Interquartile Range (IQR) statistical method to remove crazy, unrealistic outliers in budgets and leads that would have distorted my final dashboard.
 
-**Database Export**: Finally, I used SQLAlchemy to automatically push my beautifully cleaned dataset directly into a PostgreSQL database for analysis.
+- **Database Export**: Finally, I used SQLAlchemy to automatically push my beautifully cleaned dataset directly into a PostgreSQL database for analysis.
 
 ## 📈 Exploratory Data Analysis (EDA)
 
@@ -127,15 +127,15 @@ During the EDA phase in Python, I briefly explored the shape of the data to unde
 Once the clean data was in my **PostgreSQL** database, 
 I wrote 12 targeted SQL queries to extract meaningful business metrics.
 
-**Aggregations for Performance**:I used GROUP BY, SUM, and AVG to find out which marketing channels yield the highest average ROI and the most leads.
+- **Aggregations for Performance**:I used GROUP BY, SUM, and AVG to find out which marketing channels yield the highest average ROI and the most leads.
 
-**Created Custom Business Metrics**: I wrote formulas directly in SQL to calculate the conversion_rate_pct (conversions divided by leads) and roi_per_dollar to see where our money works hardest.
+- **Created Custom Business Metrics**: I wrote formulas directly in SQL to calculate the conversion_rate_pct (conversions divided by leads) and roi_per_dollar to see where our money works hardest.
 
-**Budget Logic**:I used CASE WHEN statements to group campaigns into 'Low (<$10k)', 'Medium ($10k-$30k)', and 'High (>$30k)' budget buckets to see if spending more actually guarantees better returns.
+- **Budget Logic**:I used CASE WHEN statements to group campaigns into 'Low (<$10k)', 'Medium ($10k-$30k)', and 'High (>$30k)' budget buckets to see if spending more actually guarantees better returns.
 
-**Regional Deep Dives**:I wrote multi-step queries to find the absolute worst-performing region, and then drilled down to find the specific campaigns causing that failure.
+- **Regional Deep Dives**:I wrote multi-step queries to find the absolute worst-performing region, and then drilled down to find the specific campaigns causing that failure.
 
-**Time-Series Analysis**: I used date functions (TO_CHAR and EXTRACT) to group performance by Year-Month to spot historical trends and find out which specific month consistently delivers the best ROI.
+- **Time-Series Analysis**: I used date functions (TO_CHAR and EXTRACT) to group performance by Year-Month to spot historical trends and find out which specific month consistently delivers the best ROI.
 
 ## 📊 Power BI Dashboard
 
@@ -159,13 +159,13 @@ I wrote 12 targeted SQL queries to extract meaningful business metrics.
 
 - Through my analysis, I discovered several important business insights:
 
-**Higher Spend ≠ Higher ROI**:The analysis showed that simply throwing a "High" budget at a campaign does not guarantee a better return. Some "Low" budget campaigns had incredible ROI per dollar spent.
+- **Higher Spend ≠ Higher ROI**:The analysis showed that simply throwing a "High" budget at a campaign does not guarantee a better return. Some "Low" budget campaigns had incredible ROI per dollar spent.
 
-**Channel Efficiency**:Certain channels (like Social Media and Organic) consistently drive cheaper leads with higher conversion rates compared to expensive PPC campaigns.
+- **Channel Efficiency**:Certain channels (like Social Media and Organic) consistently drive cheaper leads with higher conversion rates compared to expensive PPC campaigns.
 
-**Regional Mismatches**:I found that we are spending a massive portion of our budget in certain regions, but those regions are actually underperforming and dragging down our overall average ROI.
+- **Regional Mismatches**:I found that we are spending a massive portion of our budget in certain regions, but those regions are actually underperforming and dragging down our overall average ROI.
 
-**Seasonality Matters**: The month-over-month trend analysis revealed distinct times of the year where campaigns perform exceptionally well, indicating we should time our launches better.
+- **Seasonality Matters**: The month-over-month trend analysis revealed distinct times of the year where campaigns perform exceptionally well, indicating we should time our launches better.
 
 ## 🚀 Strategic Recommendations
 
@@ -173,11 +173,11 @@ I wrote 12 targeted SQL queries to extract meaningful business metrics.
 
 Based on the data, I recommend the business take the following actions:
 
-**Reallocate the Budget**: Shift funds away from the consistently underperforming regions and expensive low-converting channels. Reinvest that money into the channels with the highest conversion rates.
+- **Reallocate the Budget**: Shift funds away from the consistently underperforming regions and expensive low-converting channels. Reinvest that money into the channels with the highest conversion rates.
 
-**Investigate the Worst Region**: Pause active campaigns in our worst-performing region. The marketing team needs to rethink the messaging or target audience for that specific area before spending more money there.
+- **Investigate the Worst Region**: Pause active campaigns in our worst-performing region. The marketing team needs to rethink the messaging or target audience for that specific area before spending more money there.
 
-**Double Down on Seasonal Peaks**:Align our biggest campaign launches and highest budgets with the "Best ROI Months" identified in the SQL analysis to maximize our returns naturally.
+- **Double Down on Seasonal Peaks**:Align our biggest campaign launches and highest budgets with the "Best ROI Months" identified in the SQL analysis to maximize our returns naturally.
 
 ## 🔮 Future Enhancements
 
@@ -185,11 +185,11 @@ Based on the data, I recommend the business take the following actions:
 
 To take this project even further, - I would implement:
 
-**Predictive Analytics**: Use historical data in Excel or Python to forecast the expected ROI of a future campaign before the budget is even approved.
+- **Predictive Analytics**: Use historical data in Excel or Python to forecast the expected ROI of a future campaign before the budget is even approved.
 
-**Automated Data Pipelines**: Set up a cloud pipeline so that marketing data flows directly into the database and updates the Power BI dashboard automatically every single day without manual cleaning.
+- **Automated Data Pipelines**: Set up a cloud pipeline so that marketing data flows directly into the database and updates the Power BI dashboard automatically every single day without manual cleaning.
 
-**A/B Testing Framework**: Add a system to track different versions of the same campaign to definitively prove which ad copy or image performs best.
+- **A/B Testing Framework**: Add a system to track different versions of the same campaign to definitively prove which ad copy or image performs best.
 
 ## 📂 Project Structure
 
