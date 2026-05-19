@@ -1,6 +1,5 @@
 ## 📈Marketing Campaign Analysis - End-to-End Data Analytics Project
 
-###
 
 
 This project focuses on understanding the effectiveness of marketing campaigns using data analysis techniques. The analysis was performed to identify business growth opportunities, improve marketing performance, and support better decision-making through data-driven insights. By analyzing campaign data, the project helps businesses understand customer engagement, conversion performance, and budget efficiency.It follows a complete Data Analytics Lifecycle using Python, SQL, and Power BI.
@@ -72,9 +71,9 @@ This project focuses on understanding the effectiveness of marketing campaigns u
 
 
 
- I used Python (Pandas) in a Jupyter Notebook to systematically clean and standardize the dataset before performing any analysis. 
+    I used Python (Pandas) in a Jupyter Notebook to systematically clean and standardize the dataset before performing any analysis. 
 
- Here is exactly what I did step-by-step:
+    Here is exactly what I did step-by-step:
 
 - **Standardized Column Names**:I converted all column headers to lowercase and replaced spaces with underscores (e.g., Campaign Name became campaign_name) to make querying easier later.
 
