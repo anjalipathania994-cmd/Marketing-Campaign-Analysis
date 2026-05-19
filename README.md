@@ -71,9 +71,9 @@ This project focuses on understanding the effectiveness of marketing campaigns u
 
 
 
-    I used Python (Pandas) in a Jupyter Notebook to systematically clean and standardize the dataset before performing any analysis. 
+  I used Python (Pandas) in a Jupyter Notebook to systematically clean and standardize the dataset before performing any analysis. 
 
-    Here is exactly what I did step-by-step:
+  Here is exactly what I did step-by-step:
 
 - **Standardized Column Names**:I converted all column headers to lowercase and replaced spaces with underscores (e.g., Campaign Name became campaign_name) to make querying easier later.
 
