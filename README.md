@@ -9,46 +9,46 @@ This project focuses on understanding the effectiveness of marketing campaigns u
 
 
 
-This project is based on analyzing marketing campaign data.
+- This project is based on analyzing marketing campaign data.
 
-The main goal was to understand how different marketing campaigns performed and how profitable they were.
+- The main goal was to understand how different marketing campaigns performed and how profitable they were.
 
-I worked with raw and messy data and converted it into meaningful business insights.
+- I worked with raw and messy data and converted it into meaningful business insights.
 
-I analyzed important metrics like ROI (Return on Investment), conversions, and campaign performance.
+- I analyzed important metrics like ROI (Return on Investment), conversions, and campaign performance.
 
-Different marketing channels such as Email, Social Media, and PPC were compared to see which performed best.
+- Different marketing channels such as Email, Social Media, and PPC were compared to see which performed best.
 
-Geographic analysis was also done to identify which locations generated better results.
+- Geographic analysis was also done to identify which locations generated better results.
 
-The project helped answer important business questions, such as:
+- The project helped answer important business questions, such as:
 
-Which campaigns are giving the best results?
+- Which campaigns are giving the best results?
 
-Are marketing budgets being used effectively?
+- Are marketing budgets being used effectively?
 
-Which channels are driving more conversions?
+- Which channels are driving more conversions?
 
-Where is the business losing efficiency?
+- Where is the business losing efficiency?
 
-Based on the analysis, I provided data-driven recommendations to improve future marketing strategies and optimize budget allocation.
+- Based on the analysis, I provided data-driven recommendations to improve future marketing strategies and optimize budget allocation.
 
 ## 🔧 Tools & Technologies
 
 
 
-Python – Data cleaning and preprocessing (pandas, numpy)
+- Python – Data cleaning and preprocessing (pandas, numpy)
 
 
-SQL (MySQL / PostgreSQL) – Business logic and analytical queries
-
-
-
-Power BI Desktop – Interactive dashboards and KPIs
+- SQL (MySQL / PostgreSQL) – Business logic and analytical queries
 
 
 
-Excel – Initial data review and validation
+- Power BI Desktop – Interactive dashboards and KPIs
+
+
+
+- Excel – Initial data review and validation
 
 ## 📊 Dataset Information
 
