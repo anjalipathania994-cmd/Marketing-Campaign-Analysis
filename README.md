@@ -62,15 +62,10 @@ This project focuses on understanding the effectiveness of marketing campaigns u
 - **Total Records**: 6,000 rows
 
 
-
-
 - **Total Records**: 2,582 rows (after removing bad data and extreme outliers)
 
 
-
-
-## Key Columns:
- 10 columns including campaign_id, campaign_name, channel, region, start_date, budget_usd, leads_generated, conversions, roi_percent, and status.
+**Key Columns**:10 columns including campaign_id, campaign_name, channel, region, start_date, budget_usd, leads_generated, conversions, roi_percent, and status.
 
 ## 🧹 Data Cleaning Process (Pandas)
 
