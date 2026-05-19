@@ -107,16 +107,11 @@ Here is exactly what I did step-by-step:
 
 - I fixed text formatting so that words were uniformly capitalized (e.g., converting "social media" to "Social Media").
 
-## Generated Missing IDs:
-- I found rows missing a campaign_id and wrote a script to automatically generate new, unique IDs (like 'CMP-10001') to maintain a perfect primary key.
+**Generated Missing IDs**:I found rows missing a campaign_id and wrote a script to automatically generate new, unique IDs (like 'CMP-10001') to maintain a perfect primary key.
 
-## Removed Extreme Outliers:
+**Removed Extreme Outliers**:I used the Interquartile Range (IQR) statistical method to remove crazy, unrealistic outliers in budgets and leads that would have distorted my final dashboard.
 
-- I used the Interquartile Range (IQR) statistical method to remove crazy, unrealistic outliers in budgets and leads that would have distorted my final dashboard.
-
-## Database Export: 
-
-- Finally, I used SQLAlchemy to automatically push my beautifully cleaned dataset directly into a PostgreSQL database for analysis.
+**Database Export**: Finally, I used SQLAlchemy to automatically push my beautifully cleaned dataset directly into a PostgreSQL database for analysis.
 
 ## 📈 Exploratory Data Analysis (EDA)
 
@@ -137,22 +132,15 @@ During the EDA phase in Python, I briefly explored the shape of the data to unde
 Once the clean data was in my **PostgreSQL** database, 
 I wrote 12 targeted SQL queries to extract meaningful business metrics.
 
-## Aggregations for Performance:
+**Aggregations for Performance**:I used GROUP BY, SUM, and AVG to find out which marketing channels yield the highest average ROI and the most leads.
 
- I used GROUP BY, SUM, and AVG to find out which marketing channels yield the highest average ROI and the most leads.
+**Created Custom Business Metrics**: I wrote formulas directly in SQL to calculate the conversion_rate_pct (conversions divided by leads) and roi_per_dollar to see where our money works hardest.
 
-## Created Custom Business Metrics: 
+**Budget Logic**:I used CASE WHEN statements to group campaigns into 'Low (<$10k)', 'Medium ($10k-$30k)', and 'High (>$30k)' budget buckets to see if spending more actually guarantees better returns.
 
-I wrote formulas directly in SQL to calculate the conversion_rate_pct (conversions divided by leads) and roi_per_dollar to see where our money works hardest.
+**Regional Deep Dives**:I wrote multi-step queries to find the absolute worst-performing region, and then drilled down to find the specific campaigns causing that failure.
 
-## Budget Logic:
-
- I used CASE WHEN statements to group campaigns into 'Low (<$10k)', 'Medium ($10k-$30k)', and 'High (>$30k)' budget buckets to see if spending more actually guarantees better returns.
-
-## Regional Deep Dives:
- I wrote multi-step queries to find the absolute worst-performing region, and then drilled down to find the specific campaigns causing that failure.
-
-Time-Series Analysis: I used date functions (TO_CHAR and EXTRACT) to group performance by Year-Month to spot historical trends and find out which specific month consistently delivers the best ROI.
+**Time-Series Analysis**: I used date functions (TO_CHAR and EXTRACT) to group performance by Year-Month to spot historical trends and find out which specific month consistently delivers the best ROI.
 
 ## 📊 Power BI Dashboard
 
