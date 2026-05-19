@@ -54,22 +54,23 @@ This project focuses on understanding the effectiveness of marketing campaigns u
 
 
 
-The dataset I used initially contained raw, untidy data representing various marketing campaigns from 2022 to 2024.
+- The dataset I used initially contained raw, untidy data representing various marketing campaigns from 2022 to 2024.
 
 
 
 
-Total Records (Initial): 6,000 rows
+- Total Records (Initial): 6,000 rows
 
 
 
 
-Total Records (Cleaned): 2,582 rows (after removing bad data and extreme outliers)
+- Total Records (Cleaned): 2,582 rows (after removing bad data and extreme outliers)
 
 
 
 
-Key Columns: 10 columns including campaign_id, campaign_name, channel, region, start_date, budget_usd, leads_generated, conversions, roi_percent, and status.
+## Key Columns:
+ 10 columns including campaign_id, campaign_name, channel, region, start_date, budget_usd, leads_generated, conversions, roi_percent, and status.
 
 ## 🧹 Data Cleaning Process (Pandas)
 
@@ -92,34 +93,34 @@ Here is exactly what I did step-by-step:
 
 
 
- * For text columns (like channel and region), 
+- * For text columns (like channel and region), 
 
-I filled empty spaces with the "mode" (the most frequent value).
+- I filled empty spaces with the "mode" (the most frequent value).
 
-For number columns (like leads_generated and conversions), 
+- For number columns (like leads_generated and conversions), 
 
-I filled empty spaces with the "median" to avoid skewing the averages.
+- I filled empty spaces with the "median" to avoid skewing the averages.
 
 ## Fixed Data Formats: 
 
-* I cleaned the budget_usd column by removing string characters like $, USD, and commas, then converted it into proper numbers.
+- * I cleaned the budget_usd column by removing string characters like $, USD, and commas, then converted it into proper numbers.
 
-I cleaned the roi_percent column by removing the % symbol so I could perform math on it.
+- I cleaned the roi_percent column by removing the % symbol so I could perform math on it.
 
-I converted the start_date column into a proper, standardized Date format.
+- I converted the start_date column into a proper, standardized Date format.
 
-I fixed text formatting so that words were uniformly capitalized (e.g., converting "social media" to "Social Media").
+- I fixed text formatting so that words were uniformly capitalized (e.g., converting "social media" to "Social Media").
 
 ## Generated Missing IDs:
- I found rows missing a campaign_id and wrote a script to automatically generate new, unique IDs (like 'CMP-10001') to maintain a perfect primary key.
+- I found rows missing a campaign_id and wrote a script to automatically generate new, unique IDs (like 'CMP-10001') to maintain a perfect primary key.
 
 ## Removed Extreme Outliers:
 
- I used the Interquartile Range (IQR) statistical method to remove crazy, unrealistic outliers in budgets and leads that would have distorted my final dashboard.
+- I used the Interquartile Range (IQR) statistical method to remove crazy, unrealistic outliers in budgets and leads that would have distorted my final dashboard.
 
 ## Database Export: 
 
-Finally, I used SQLAlchemy to automatically push my beautifully cleaned dataset directly into a PostgreSQL database for analysis.
+- Finally, I used SQLAlchemy to automatically push my beautifully cleaned dataset directly into a PostgreSQL database for analysis.
 
 ## 📈 Exploratory Data Analysis (EDA)
 
@@ -127,11 +128,11 @@ Finally, I used SQLAlchemy to automatically push my beautifully cleaned dataset 
 
 During the EDA phase in Python, I briefly explored the shape of the data to understand what I was working with:
 
-I checked the distribution of budgets to see what a "normal" campaign costs.
+- I checked the distribution of budgets to see what a "normal" campaign costs.
 
-I looked at the unique categories to see how many different channels (Social Media, Organic, Email, PPC) and regions (North, South, East, West) we were targeting.
+- I looked at the unique categories to see how many different channels (Social Media, Organic, Email, PPC) and regions (North, South, East, West) we were targeting.
 
-I reviewed the date ranges to confirm we had a solid multi-year dataset (2022–2024) to track trends over time.
+- I reviewed the date ranges to confirm we had a solid multi-year dataset (2022–2024) to track trends over time.
 
 ## 🗄️ SQL Analysis
 
@@ -161,31 +162,35 @@ Time-Series Analysis: I used date functions (TO_CHAR and EXTRACT) to group perfo
 
 
 
-To make my findings easy to digest for management and stakeholders, I connected my database to Power BI and built an interactive dashboard.
+- To make my findings easy to digest for management and stakeholders, I connected my database to Power BI and built an interactive dashboard.
 
-KPI Cards (The Big Picture): Placed at the top to instantly show Total Budget Spent, Average ROI, Total Leads Generated, and Overall Conversion Rate.
+- KPI Cards (The Big Picture): Placed at the top to instantly show Total Budget Spent, Average ROI, Total Leads Generated, and Overall Conversion Rate.
 
-Bar Charts (Channel Performance): Visually compares Email, Social Media, PPC, and Organic channels so stakeholders can instantly see which channel drives the best ROI.
+- Bar Charts (Channel Performance): Visually compares Email, Social Media, PPC, and Organic channels so stakeholders can instantly see which channel drives the best ROI.
 
-Donut Chart (Regional Spend): Shows exactly what percentage of the budget is being allocated to the North, South, East, and West regions.
+- Donut Chart (Regional Spend): Shows exactly what percentage of the budget is being allocated to the North, South, East, and West regions.
 
-Line Chart (Monthly Trends): Tracks leads and ROI over time, helping the business understand seasonal peaks (e.g., spikes during the holidays or summer).
+- Line Chart (Monthly Trends): Tracks leads and ROI over time, helping the business understand seasonal peaks (e.g., spikes during the holidays or summer).
 
-Matrix Table (Campaign Deep-Dive): A detailed table allowing users to drill down into specific campaign names to see their exact status, budget, and conversion numbers.
+- Matrix Table (Campaign Deep-Dive): A detailed table allowing users to drill down into specific campaign names to see their exact status, budget, and conversion numbers.
 
 ## 🔍 Insights & Findings
 
 
 
-Through my analysis, I discovered several important business insights:
+- Through my analysis, I discovered several important business insights:
 
-Higher Spend ≠ Higher ROI: The analysis showed that simply throwing a "High" budget at a campaign does not guarantee a better return. Some "Low" budget campaigns had incredible ROI per dollar spent.
+## Higher Spend ≠ Higher ROI:
+ The analysis showed that simply throwing a "High" budget at a campaign does not guarantee a better return. Some "Low" budget campaigns had incredible ROI per dollar spent.
 
-Channel Efficiency: Certain channels (like Social Media and Organic) consistently drive cheaper leads with higher conversion rates compared to expensive PPC campaigns.
+## Channel Efficiency:
+ Certain channels (like Social Media and Organic) consistently drive cheaper leads with higher conversion rates compared to expensive PPC campaigns.
 
-Regional Mismatches: I found that we are spending a massive portion of our budget in certain regions, but those regions are actually underperforming and dragging down our overall average ROI.
+## Regional Mismatches:
+I found that we are spending a massive portion of our budget in certain regions, but those regions are actually underperforming and dragging down our overall average ROI.
 
-Seasonality Matters: The month-over-month trend analysis revealed distinct times of the year where campaigns perform exceptionally well, indicating we should time our launches better.
+## Seasonality Matters: 
+The month-over-month trend analysis revealed distinct times of the year where campaigns perform exceptionally well, indicating we should time our launches better.
 
 ## 🚀 Strategic Recommendations
 
@@ -193,21 +198,26 @@ Seasonality Matters: The month-over-month trend analysis revealed distinct times
 
 Based on the data, I recommend the business take the following actions:
 
-Reallocate the Budget: Shift funds away from the consistently underperforming regions and expensive low-converting channels. Reinvest that money into the channels with the highest conversion rates.
+## Reallocate the Budget: 
+Shift funds away from the consistently underperforming regions and expensive low-converting channels. Reinvest that money into the channels with the highest conversion rates.
 
-Investigate the Worst Region: Pause active campaigns in our worst-performing region. The marketing team needs to rethink the messaging or target audience for that specific area before spending more money there.
+## Investigate the Worst Region: 
+Pause active campaigns in our worst-performing region. The marketing team needs to rethink the messaging or target audience for that specific area before spending more money there.
 
-Double Down on Seasonal Peaks: Align our biggest campaign launches and highest budgets with the "Best ROI Months" identified in the SQL analysis to maximize our returns naturally.
+## Double Down on Seasonal Peaks:
+ Align our biggest campaign launches and highest budgets with the "Best ROI Months" identified in the SQL analysis to maximize our returns naturally.
 
 ## 🔮 Future Enhancements
 
 
 
-To take this project even further, I would implement:
+To take this project even further, - I would implement:
 
-Predictive Analytics: Use historical data in Excel or Python to forecast the expected ROI of a future campaign before the budget is even approved.
+## Predictive Analytics: 
+Use historical data in Excel or Python to forecast the expected ROI of a future campaign before the budget is even approved.
 
-Automated Data Pipelines: Set up a cloud pipeline so that marketing data flows directly into the database and updates the Power BI dashboard automatically every single day without manual cleaning.
+## Automated Data Pipelines: 
+Set up a cloud pipeline so that marketing data flows directly into the database and updates the Power BI dashboard automatically every single day without manual cleaning.
 
 A/B Testing Framework: Add a system to track different versions of the same campaign to definitively prove which ad copy or image performs best.
 
