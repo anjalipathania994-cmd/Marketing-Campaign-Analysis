@@ -200,13 +200,14 @@ To take this project even further, - I would implement:
 
 
 
-Marketing-Campaign-Analysis
-│── marketcampaign.ipynb                     # Python notebook for cleaning & EDA
+Marketing Campaign-Analysis
+│── marketcampaign.ipynb                    # Python notebook for cleaning & EDA
 │── marketing_campaign_cleaned.csv            # Cleaned dataset
-│── marketing_campaign_messy.csv             # Messy dataset
-|── Market_Campaign.sql                  # SQL queries for insights (PostgreSQL)
+│── marketing_campaign_messy.csv              # Messy dataset
+│── Market_Campaign.sql                  # SQL queries for insights (PostgreSQL)
 │── marketing_campaign_Dashboard.pbix      # Power BI dashboard file
-│── README.md                             # Documentation
+│── README.md                         # Documentation
+
 
 
 
