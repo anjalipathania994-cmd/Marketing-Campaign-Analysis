@@ -195,6 +195,8 @@ Filtering using WHERE clause
 Date Functions and Formatting
 
 📈 Outcome of SQL Analysis
+
+
 The PostgreSQL analysis helped uncover important business insights related to:
 
 Campaign performance
