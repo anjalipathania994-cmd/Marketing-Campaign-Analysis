@@ -51,13 +51,10 @@ The main objectives of this project were:
 | **Python**           | Data Cleaning & Data Analysis     |
 | **Pandas**           | Data Manipulation & Cleaning      |
 | **NumPy**            | Numerical Operations              |
-| **Matplotlib**       | Data Visualization                |
-| **Seaborn**          | Statistical Visualization         |
 | **Jupyter Notebook** | Data Analysis Environment         |
-| **MySQL**            | SQL Query Analysis                |
+| **PostgreSQL**       | SQL Query Analysis                |
 | **Power BI**         | Interactive Dashboard & Reporting |
 
----
 
 # 📂 Dataset Information
 
@@ -75,6 +72,7 @@ The dataset included important columns such as:
 * Budget_USD
 * Leads_Generated
 * Conversions
+* Click Rate
 * ROI_Percent
 * Status
 
@@ -98,6 +96,19 @@ Proper data cleaning was necessary to ensure accurate analysis and reliable insi
 
 Data cleaning was performed using **Python (Pandas)** to prepare the dataset for analysis.
 
+* Cleaned raw marketing campaign data using Python Pandas
+
+* Handled missing values and removed duplicate records
+
+* Standardized column names and fixed inconsistent formatting
+
+* Converted incorrect data types into proper formats
+
+* Removed unwanted spaces and cleaned text values
+
+* Performed null value checks and data validation
+
+* Exported cleaned dataset for EDA, SQL analysis, and Power BI dashboard creation
 
 # 📈 Exploratory Data Analysis (EDA)
 
@@ -107,18 +118,9 @@ Exploratory Data Analysis (EDA) is the process of analyzing datasets to discover
 
 EDA helps transform raw data into meaningful business information.
 
----
-
 ## 📊 Analyses Performed
 
 The following analyses were performed during EDA:
-
-### 🔹 Customer Behavior Analysis
-
-* Customer age distribution
-* Gender analysis
-* Income analysis
-* Customer segment comparison
 
 ### 🔹 Campaign Performance Analysis
 
@@ -143,54 +145,67 @@ Different visualizations were created using Matplotlib and Seaborn:
 | ------------- | --------------------- |
 | Bar Charts    | Campaign comparison   |
 | Line Charts   | Revenue trends        |
-| Pie Charts    | Customer segmentation |
-| Histograms    | Data distribution     |
-| Heatmaps      | Correlation analysis  |
-| Count Plots   | Frequency analysis    |
+| Donut Charts    | Customer segmentation |
 
 ---
 
-# 🗄️ SQL Analysis
+🗄️ SQL Analysis Using PostgreSQL
+After cleaning the dataset, PostgreSQL was used to perform business analysis and solve real-world marketing campaign problems using SQL queries.
 
-## 📌 Why MySQL Was Used
+📊 Business Problems Solved
+* Identified the marketing channel with the highest average ROI
 
-After cleaning the dataset in Python, the cleaned data was imported into **MySQL** for advanced business analysis.
+* Analyzed which channel generated the maximum leads
 
-SQL helped perform fast and structured querying of campaign data to solve real business problems.
+* Calculated conversion rates for different marketing channels
 
----
+* Compared campaign ROI based on budget categories
 
-## 📊 Business Questions Solved Using SQL
+* Found campaigns with the best ROI per dollar spent
 
-Several business problem statements were analyzed using SQL queries.
+* Analyzed region-wise marketing budget distribution
 
-### Examples:
+* Identified regions with highest conversions and ROI
 
-* Which campaign generated the highest revenue?
-* Which customer segment had the highest response rate?
-* Which marketing channel performed best?
-* What is the average conversion rate?
-* Which campaigns had the highest engagement?
+* Detected under-performing regions and campaigns
 
----
+* Analyzed monthly lead generation trends from 2022–2024
 
-## 🛠️ SQL Concepts Used
+* Identified months with the highest campaign ROI
 
-### 🔹 GROUP BY
+* Compared campaign performance based on campaign status
 
-Used for grouping campaign and customer data.
+* Evaluated whether completed campaigns performed better than others
 
-```sql
-GROUP BY campaign_type
-```
+🛠️ SQL Concepts Used
+GROUP BY
 
-### 🔹 ORDER BY
+ORDER BY
 
-Used for sorting results based on revenue or conversion rate.
+Aggregate Functions (SUM, AVG, COUNT, MAX, MIN)
 
-```sql
-ORDER BY revenue DESC
-```
+CASE Statements
+
+Window Functions
+
+Filtering using WHERE clause
+
+Date Functions and Formatting
+
+📈 Outcome of SQL Analysis
+The PostgreSQL analysis helped uncover important business insights related to:
+
+Campaign performance
+
+Customer engagement
+
+Revenue trends
+
+Marketing effectiveness
+
+ROI optimization
+
+Regional campaign analysis
 
 ### 🔹 Aggregate Functions
 
@@ -226,36 +241,28 @@ Displayed important metrics such as:
 
 * Total Revenue
 * Total Campaigns
-* Conversion Rate
-* Customer Count
-* Engagement Rate
+* Total Conversions
+* Total Leads
 
 ### ✅ Charts & Visuals Used
 
-| Visual       | Purpose                   |
-| ------------ | ------------------------- |
-| Bar Chart    | Campaign comparison       |
-| Line Chart   | Revenue trends            |
-| Pie Chart    | Customer segmentation     |
-| Donut Chart  | Channel distribution      |
-| Heatmap      | Correlation analysis      |
-| Table Visual | Detailed campaign metrics |
-
----
+* **Number Cards (KPIs):** Placed at the very top to instantly show the most important totals, like Total Ad Spend or Total Clicks.
+* **Line Charts:** Used to track trends over time, making it easy to see when campaign results went up or down.
+* **Bar Charts:** Used to compare different categories side-by-side, such as seeing which social media platform brought in the most users.
+* **Pie and Donut Charts:** Used to show simple percentages, like comparing how many people viewed the ads on a phone versus a computer.
+* **Interactive Filters (Slicers):** Added clickable menus and sliders so anyone looking at the dashboard can easily filter the view by specific dates or individual campaigns.
 
 ## 🎛️ Filters & Slicers
 
 Interactive slicers were added for:
 
-* Campaign Type
-* Customer Segment
-* Marketing Channel
-* Gender
-* Time Period
+Date Filter: Change the dates to see results for any specific month or day.
 
-These filters help users dynamically explore data.
+Campaign Filter: Pick a specific marketing campaign to check its exact results.
 
----
+Platform Filter: Choose channels like Facebook, Google, or Email to see what worked best.
+
+Click to Filter: Click on any chart to instantly update the rest of the page.
 
 ## 📈 Dashboard Insights
 
@@ -339,9 +346,7 @@ Market-Campaign-Analysis/
 ├── README.md
 │
 └── requirements.txt
-```
 
----
 
 # 📸 Dashboard Screenshots
 
@@ -360,16 +365,7 @@ Through:
 
 valuable insights were generated to improve marketing performance and customer targeting strategies.
 
-This project demonstrates strong skills in:
 
-* Data Cleaning
-* Data Visualization
-* SQL Analysis
-* Dashboard Development
-* Business Intelligence
-* Analytical Thinking
 
-The project also highlights the importance of data-driven decision-making in modern marketing strategies and showcases practical real-world Data Analytics workflow implementation.
 
--
-
+---
