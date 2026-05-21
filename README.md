@@ -351,8 +351,6 @@ Market-Campaign-Analysis/
 └── requirements.txt
 
 
-
-
 # 📸 Dashboard Screenshots
 ![Dashboard Screenshot](https://github.com/anjalipathania994-cmd/Marketing-Campaign-Analysis/blob/main/Screenshot_t.png)
 
