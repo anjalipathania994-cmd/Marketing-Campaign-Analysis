@@ -149,8 +149,8 @@ Different visualizations were created using Matplotlib and Seaborn:
 
 ---
 
-🗄️ SQL Analysis Using PostgreSQL
-After cleaning the dataset, PostgreSQL was used to perform business analysis and solve real-world marketing campaign problems using SQL queries.
+🗄️ SQL Analysis
+ Using PostgreSQL,After cleaning the dataset, PostgreSQL was used to perform business analysis and solve real-world marketing campaign problems using SQL queries.
 
 📊 Business Problems Solved
 * Identified the marketing channel with the highest average ROI
@@ -350,7 +350,7 @@ Market-Campaign-Analysis/
 
 # 📸 Dashboard Screenshots
 
-
+![Dashboard Screenshot](https://github.com/anjalipathania994-cmd/Marketing-Campaign-Analysis/blob/main/Screenshot_t.png)
 
 # ✅ Conclusion
 
