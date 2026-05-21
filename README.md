@@ -328,7 +328,6 @@ The project can be enhanced further using advanced technologies and automation.
 
 # 📂 Project Structure
 
-```bash
 Market-Campaign-Analysis/
 │
 ├── data/
@@ -350,6 +349,8 @@ Market-Campaign-Analysis/
 ├── README.md
 │
 └── requirements.txt
+
+
 
 
 # 📸 Dashboard Screenshots
