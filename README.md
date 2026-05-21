@@ -150,6 +150,8 @@ Different visualizations were created using Matplotlib and Seaborn:
 ---
 
 🗄️ SQL Analysis
+
+
  Using PostgreSQL,After cleaning the dataset, PostgreSQL was used to perform business analysis and solve real-world marketing campaign problems using SQL queries.
 
 📊 Business Problems Solved
