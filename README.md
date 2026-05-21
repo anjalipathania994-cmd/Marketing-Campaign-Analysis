@@ -356,6 +356,8 @@ Market-Campaign-Analysis/
 
 ![Dashboard Screenshot](https://github.com/anjalipathania994-cmd/Marketing-Campaign-Analysis/blob/main/Screenshot_t.png)
 
+
+
 # ✅ Conclusion
 
 The **Market Campaign Analysis Project** successfully transformed raw marketing data into meaningful business insights using Data Analytics techniques.
