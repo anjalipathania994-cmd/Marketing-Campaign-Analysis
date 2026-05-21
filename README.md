@@ -333,20 +333,20 @@ The project can be enhanced further using advanced technologies and automation.
 Market-Campaign-Analysis/
 │
 ├── data/
-│   ├── raw_dataset.csv
-│   ├── cleaned_dataset.csv
+│   ├── marketing_campaign_messy.csv
+│   ├── marketing_campaign_cleaned
 │
 ├── notebooks/
-│   ├── market_campaign_analysis.ipynb
+│   ├── marketcampaign.ipynb
 │
 ├── sql_queries/
-│   ├── marketing_campaign_queries.sql
+│   ├── Market_campaign.sql
 │
 ├── dashboard/
-│   ├── marketing_dashboard.pbix
+│   ├── marketing_campaign_dashboard.pbix
 │
 ├── images/
-│   ├── dashboard_screenshot.png
+│   ├── screenshot_t.png
 │
 ├── README.md
 │
